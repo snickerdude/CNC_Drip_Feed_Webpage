@@ -6,30 +6,102 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <table>
+    <thead>
+        <tr>
+          <th></th>
+          <th>File Name</th>
+          <th>File Size</th>
+          <th>Date/Time Added</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="radio" name="rowSelect"></td>
+          <td>File1.nc</td>
+          <td>41k</td>
+          <td>12/26/25 19:20</td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="rowSelect"></td>
+          <td>File2.nc</td>
+          <td>100k</td>
+          <td>12/26/25 19:22</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 10px;">
+      <button onclick="deleteFile()">Delete File</button>
+      <button onclick="refreshTable()">Refresh Table</button>
+    </div>
+    <h3>RS232 Parameters</h3>
     <table border="1">
-  <thead>
-    <tr>
-      <th></th>
-      <th>File Name</th>
-      <th>File Size</th>
-      <th>Date/Time Added</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input type="radio" name="rowSelect"></td>
-      <td>File1.nc</td>
-      <td>41k</td>
-      <td>12/26/25 19:20</td>
-    </tr>
-    <tr>
-      <td><input type="radio" name="rowSelect"></td>
-      <td>File2.nc</td>
-      <td>100k</td>
-      <td>12/26/25 19:22</td>
-    </tr>
-  </tbody>
-</table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Baud Rate</td>
+          <td>
+            <select>
+              <option value="9600">9600</option>
+              <option value="19200">19200</option>
+              <option value="38400">38400</option>
+              <option value="57600">57600</option>
+              <option value="115200">115200</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Data Bits</td>
+          <td>
+            <select>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8" selected>8</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Parity</td>
+          <td>
+            <select>
+              <option value="none" selected>None</option>
+              <option value="even">Even</option>
+              <option value="odd">Odd</option>
+              <option value="mark">Mark</option>
+              <option value="space">Space</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Stop Bits</td>
+          <td>
+            <select>
+              <option value="1" selected>1</option>
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Flow Control</td>
+          <td>
+            <select>
+              <option value="none" selected>None</option>
+              <option value="rtscts">RTS/CTS</option>
+              <option value="xonxoff">XON/XOFF</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Messages:</h3>
+    <textarea id="message-box" readonly rows="10" cols="50"></textarea>
     <h1>Hello, GitHub Pages!</h1>
     <button id="myButton">Click me</button>
     <p id="message"></p>
