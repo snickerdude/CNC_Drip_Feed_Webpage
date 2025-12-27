@@ -6,7 +6,17 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <table>
+    <h3>Sending: <span id="progress-percent">0%</span></h3>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <div style="margin-top: 10px;">
+      <button onclick="startSending()">Start Sending</button>
+      <button onclick="pauseSending()">Pause Sending</button>
+      <button onclick="endSending()">End Sending</button>
+    </div>
+    <table border="1">
       <thead>
         <tr>
           <th></th>
@@ -34,13 +44,9 @@
       <button onclick="deleteFile()">Delete File</button>
       <button onclick="refreshTable()">Refresh Table</button>
     </div>
-    <h3>RS232 Parameters</h3>
     <table border="1">
       <thead>
-        <tr>
-          <th>Parameter</th>
-          <th>Value</th>
-        </tr>
+        <th colspan="2">RS232 Parameters</th>
       </thead>
       <tbody>
         <tr>
@@ -59,10 +65,8 @@
           <td>Data Bits</td>
           <td>
             <select>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8" selected>8</option>
+              <option value="7" selected>7</option>
+              <option value="8">8</option>
             </select>
           </td>
         </tr>
@@ -70,8 +74,8 @@
           <td>Parity</td>
           <td>
             <select>
-              <option value="none" selected>None</option>
-              <option value="even">Even</option>
+              <option value="none">None</option>
+              <option value="even" selected>Even</option>
               <option value="odd">Odd</option>
               <option value="mark">Mark</option>
               <option value="space">Space</option>
@@ -83,7 +87,6 @@
           <td>
             <select>
               <option value="1" selected>1</option>
-              <option value="1.5">1.5</option>
               <option value="2">2</option>
             </select>
           </td>
@@ -92,8 +95,8 @@
           <td>Flow Control</td>
           <td>
             <select>
-              <option value="none" selected>None</option>
-              <option value="rtscts">RTS/CTS</option>
+              <option value="none">None</option>
+              <option value="rtscts" selected>RTS/CTS</option>
               <option value="xonxoff">XON/XOFF</option>
             </select>
           </td>
@@ -102,9 +105,6 @@
     </table>
     <h3>Messages:</h3>
     <textarea id="message-box" readonly rows="10" cols="50"></textarea>
-    <h1>Hello, GitHub Pages!</h1>
-    <button id="myButton">Click me</button>
-    <p id="message"></p>
 
     <script src="script.js"></script>
   </body>
