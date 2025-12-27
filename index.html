@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h3>Sending: <span id="progress-percent">0%</span></h3>
+    <textarea border="1">Sending: <span id="progress-percent">0%</span></textarea>
     <div class="progress-container">
       <div class="progress-bar" id="progress-bar"></div>
     </div>
@@ -40,7 +40,7 @@
         </tr>
       </tbody>
     </table>
-    <div style="margin-top: 10px;">
+    <div style="margin-bottom: 50px;">
       <button onclick="deleteFile()">Delete File</button>
       <button onclick="refreshTable()">Refresh Table</button>
     </div>
@@ -103,8 +103,10 @@
         </tr>
       </tbody>
     </table>
-    <h3>Messages:</h3>
-    <textarea id="message-box" readonly rows="10" cols="50"></textarea>
+    <textarea id="message-box" 
+              readonly rows="10" 
+              cols="50"
+              title="Messages:"></textarea>
 
     <script src="script.js"></script>
   </body>
